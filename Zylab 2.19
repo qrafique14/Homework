@@ -1,0 +1,37 @@
+#QintaarRafique
+#1762953
+
+# 1
+lemon = float(input('Enter amount of lemon juice (in cups):\n'))
+water = float(input('Enter amount of water (in cups):\n'))
+nectar = float(input('Enter amount of agave nectar (in cups):\n'))
+servings = float(input('How many servings does this make?\n'))
+
+print('\nLemonade ingredients - yields {:.2f} servings'.format(servings))
+print('{:.2f} cup(s) lemon juice'.format(lemon))
+print('{:.2f} cup(s) water'.format(water))
+print('{:.2f} cup(s) agave nectar'.format(nectar))
+
+#2
+num_servings_required = float(input('\nHow many servings would you like to make?\n'))
+
+print('\nLemonade ingredients - yields {:.2f} servings'.format(num_servings_required))
+print('{:.2f} cup(s) lemon juice'.format(lemon * num_servings_required / servings))
+print('{:.2f} cup(s) water'.format(water * num_servings_required / servings))
+print('{:.2f} cup(s) agave nectar'.format(nectar * num_servings_required / servings))
+
+#3
+print('\nLemonade ingredients - yields {:.2f} servings'.format(num_servings_required))
+print('{:.2f} gallon(s) lemon juice'.format(lemon * num_servings_required / servings / 16))
+print('{:.2f} gallon(s) water'.format(water * num_servings_required / servings / 16))
+print('{:.2f} gallon(s) agave nectar'.format(nectar * num_servings_required / servings / 16))
+
+lemon = float(input('Enter amount of lemon juice (in cups): \n'))
+water = float(input('Enter amount of water (in cups): \n'))
+nectar = float(input('Enter amount of agave nectar (in cups): \n'))
+servings = float(input('How many servings does this make? \n'))
+
+print('\nLemonade ingredients - yields {:.2f} servings'.format(servings))
+print('{:.2f} cup(s) lemon juice'.format(lemon))
+print('{:.2f} cup(s) water'.format(water))
+print('{:.2f} cup(s) agave nectar'.format(nectar))
