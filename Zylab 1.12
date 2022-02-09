@@ -1,3 +1,6 @@
+#QintaarRafique
+#1762953
+
 userNum = int(input())
 userNumSquared = userNum * userNum
 
