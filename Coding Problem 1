@@ -1,0 +1,22 @@
+from datetime import date
+
+def calculateAge(currentDate, birthDate):
+    today = currentDate
+    age = today.year - birthDate.year - ((today.month, today.day) < (birthDate.month, birthDate.day))
+    return age
+
+p = 1981
+q = 9
+r = 21
+print("Birthday Calculator")
+print('current Day')
+m = int(input('Month: '))
+d = int(input('Day: '))
+y = int(input('Year: '))
+print('Birthday')
+bm = int(input('Month: '))
+bd = int(input('Day: '))
+by = int(input('Year: '))
+print('You are ' ,calculateAge(date(y, m, d), date(by, bm, bd)), 'years old.')
+if d == bd:
+    print("Happy Birthday!")
