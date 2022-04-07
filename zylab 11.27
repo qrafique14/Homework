@@ -1,0 +1,122 @@
+#QintaarRafique
+#1762953
+
+def menu():
+    """
+        Function that prints menu
+    """
+    print(
+        "\nMENU \na - Add player \nd - Remove player \nu - Update player rating \nr - Output players above a rating \no - Output roster \nq - Quit\n")
+
+
+def addPlayer(roster):
+    """
+        Function that adds player to roster
+    """
+    # Reading jersey numbers
+    jersey = int(input("\nEnter player jersey number: "))
+    # Reading rating
+    rating = int(input("Enter player rating: "))
+    roster[jersey] = rating
+    print("Player has been added successfully")
+
+
+def outputRoster(roster):
+    """
+        Function that prints ROSTER to console
+    """
+    print("\nROSTER \n")
+    # Sorting and printing
+    sortedRoster = sorted(roster.keys())
+    # Looping over each element in the dictionary and printing to console  
+    for jersey in sortedRoster:
+        print("Jersey Number: " + str(jersey) + ", Rating: " + str(roster[jersey]))
+
+
+def deletePlayer(roster):
+    """
+        Function that deletes an existing player from roster
+    """
+    # Reading jersey numbers
+    jersey = int(input("\nEnter player jersey number: "))
+    # Searching for jersey number
+    if jersey not in roster.keys():
+        print("No Player exists with given jersey number....")
+    else:
+        # Deleting entry
+        del roster[jersey]
+        print("Deleted Successfully")
+
+
+def updatePlayer(roster):
+    """
+        Function that updates an existing player from roster
+    """
+    # Reading jersey numbers
+    jersey = int(input("\nEnter player jersey number: "))
+    # Searching for jersey number
+    if jersey not in roster.keys():
+        print("No Player exists with given jersey number....")
+    else:
+        # Reading rating
+        rating = int(input("\nEnter player rating: "))
+        # Updating dictionary
+        roster[jersey] = rating
+        print("Updated Successfully")
+
+
+def aboveRating(roster):
+    """
+        Function that displays the details of player whose rating is above the given rating
+    """
+    # Reading rating
+    rating = int(input("\nEnter a rating: "))
+    print("ABOVE " + str(rating))
+    # Sorting and printing
+    sortedRoster = sorted(roster.keys())
+    # Looping over each element in the dictionary and printing to console  
+    for jersey in sortedRoster:
+        # Printing values above the rating
+        if roster[jersey] > rating:
+            print("Jersey Number: " + str(jersey) + ", Rating: " + str(roster[jersey]))
+
+
+def main():
+    """
+        Main function
+    """
+    roster = {}
+    i = 1
+    # Storing five player details
+    for i in range(0, 5):
+        # Reading jersey numbers
+        jersey = int(input("\nEnter player " + str(i + 1) + "'s jersey number: \n"))
+        # Reading rating
+        rating = int(input("Enter player " + str(i + 1) + "'s rating: \n"))
+        roster[jersey] = rating
+    outputRoster(roster)
+
+    # Loop till user wants to quit
+    while True:
+        # Printing menu
+        menu()
+        # Reading option from user
+        option = input("\nChoose an option: ")
+
+        # Calling appropriate function
+        if option == 'a':
+            addPlayer(roster)
+        elif option == 'd':
+            deletePlayer(roster)
+        elif option == 'o':
+            outputRoster(roster)
+        elif option == 'u':
+            updatePlayer(roster)
+        elif option == 'r':
+            aboveRating(roster)
+        elif option == 'q':
+            return
+
+
+# Calling main function          
+main()
